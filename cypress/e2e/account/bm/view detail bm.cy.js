@@ -24,5 +24,8 @@ describe('view detail bm', () => {
         cy.get('#BranchId').should('have.attr', 'readonly')
         cy.get('#Username').should('have.attr', 'readonly')
         cy.get('#Email').should('have.attr', 'readonly')
+        cy.get('#BranchId').should('have.attr', 'value', '1955')
+        cy.get('#Username').should('have.attr', 'value', 'bm dari cypress')
+        cy.get('#Email').should('have.attr', 'value', 'cy@press.com')
     })
 })
