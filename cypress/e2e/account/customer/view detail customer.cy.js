@@ -1,0 +1,26 @@
+describe('view detail admin', () => {
+    it('view detail', () => {
+        //view detail
+        cy.get('[type="search"]').type('admin_cypress')
+        cy.wait(3000)
+        cy.contains('Lihat Detail').click()
+    
+        cy.get('h1').should('contain.text', 'Detail Administrator')
+        cy.get('ul').should('contain.text', 'Dashboard')
+        cy.get('ul').should('contain.text', 'List Administrator')
+        cy.get('ul').should('contain.text', 'Detail Administrator')
+        cy.get('ul').contains('Dashboard').should('have.attr', 'href', '#')
+        cy.get('ul').contains('List Administrator').should('have.attr', 'href', '#')
+        cy.get('ul').contains('Detail Administrator').should('have.attr', 'href', '#')
+        cy.get('#sticky-panel').should('contain.text', 'Edit')
+        cy.get('#sticky-panel').should('contain.text', 'Reset Password')
+        cy.get('#sticky-panel').should('contain.text', 'Delete')
+        cy.get('#sticky-panel').should('contain.text', 'Created by :')
+        cy.get('#sticky-panel').should('contain.text', 'Modified by :')
+        cy.get('.content-detail').should('contain.text', 'Data Administrator')
+        cy.get('.content-detail').should('contain.text', 'Username')
+        cy.get('.content-detail').should('contain.text', 'Email')
+        cy.get('#Username').should('have.attr', 'readonly')
+        cy.get('#Email').should('have.attr', 'readonly')
+    })
+})
